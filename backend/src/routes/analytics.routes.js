@@ -1,0 +1,1 @@
+const express=require('express');const router=express.Router();const {authenticate}=require('../middleware/auth.middleware');const c=require('../controllers/analytics.controller');router.use(authenticate);router.get('/',c.overview);router.get('/weaknesses',c.weaknesses);module.exports=router;

@@ -1,0 +1,1319 @@
+/* =========================================================
+   ROLE LOGIN PAGE
+   IMPORTANT:
+   Every selector is scoped to .role-login-page
+   so it will NOT affect LoginPage.jsx
+   ========================================================= */
+
+.role-login-page {
+  --role-primary: #6366f1;
+  --role-primary-dark: #4f46e5;
+  --role-text: #172033;
+  --role-muted: #6b7280;
+  --role-border: #e5e7eb;
+  --role-card: #ffffff;
+  --role-bg: #f6f8fc;
+
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: var(--role-bg);
+  color: var(--role-text);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.role-login-page .role-login-background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.role-login-page .role-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.55;
+}
+
+.role-login-page .role-bg-orb-one {
+  width: 420px;
+  height: 420px;
+  top: -220px;
+  left: -180px;
+  background: rgba(99, 102, 241, 0.12);
+}
+
+.role-login-page .role-bg-orb-two {
+  width: 500px;
+  height: 500px;
+  right: -250px;
+  top: 10%;
+  background: rgba(14, 165, 233, 0.09);
+}
+
+.role-login-page .role-bg-orb-three {
+  width: 380px;
+  height: 380px;
+  left: 35%;
+  bottom: -260px;
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.role-login-page .role-bg-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.035) 1px, transparent 1px);
+  background-size: 45px 45px;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.role-login-page .role-login-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(440px, 560px);
+}
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.role-login-page .role-login-left {
+  min-height: 100vh;
+  padding: 55px 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.role-login-page .role-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.role-login-page .role-brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #6366f1,
+    #4f46e5
+  );
+
+  color: white;
+  font-size: 23px;
+  font-weight: 800;
+
+  box-shadow:
+    0 10px 25px rgba(79, 70, 229, 0.25);
+}
+
+.role-login-page .role-brand-name {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.role-login-page .role-brand-tagline {
+  margin-top: 3px;
+  color: var(--role-muted);
+  font-size: 11px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.role-login-page .role-hero {
+  max-width: 650px;
+  margin: auto 0;
+  padding: 50px 0;
+}
+
+.role-login-page .role-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--role-primary);
+}
+
+.role-login-page .role-eyebrow > span {
+  width: 25px;
+  height: 2px;
+  display: block;
+  background: var(--role-primary);
+  border-radius: 5px;
+}
+
+.role-login-page .role-hero h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: 1.03;
+  letter-spacing: -3px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.role-login-page .role-hero h1 strong {
+  color: var(--role-primary);
+  font-weight: 800;
+}
+
+.role-login-page .role-hero > p {
+  max-width: 570px;
+  margin: 25px 0 30px;
+
+  color: #6b7280;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   ROLE PROFILE CARD
+   ========================================================= */
+
+.role-login-page .role-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  width: 100%;
+  max-width: 580px;
+
+  padding: 15px 17px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  border-radius: 16px;
+
+  box-shadow:
+    0 15px 40px rgba(15, 23, 42, 0.06);
+
+  backdrop-filter: blur(12px);
+}
+
+.role-login-page .role-profile-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #eef2ff;
+  font-size: 22px;
+}
+
+.role-login-page .role-profile-content {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.role-login-page .role-profile-content strong {
+  font-size: 13px;
+  font-weight: 750;
+  color: #1f2937;
+}
+
+.role-login-page .role-profile-content span {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.role-login-page .role-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 9px;
+
+  border-radius: 20px;
+
+  background: #ecfdf5;
+  color: #059669;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.role-login-page .role-status > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+/* =========================================================
+   ROLE-SPECIFIC PROFILE COLORS
+   ========================================================= */
+
+.role-login-page .role-profile-student .role-profile-icon {
+  background: #ecfdf5;
+}
+
+.role-login-page .role-profile-teacher .role-profile-icon {
+  background: #eff6ff;
+}
+
+.role-login-page .role-profile-admin .role-profile-icon {
+  background: #fef2f2;
+}
+
+/* =========================================================
+   FEATURE LIST
+   ========================================================= */
+
+.role-login-page .role-feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+.role-login-page .role-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 12px;
+
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+
+  border-radius: 10px;
+
+  font-size: 11px;
+  font-weight: 600;
+  color: #4b5563;
+
+  backdrop-filter: blur(10px);
+}
+
+.role-login-page .role-feature-icon {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 6px;
+
+  background: #eef2ff;
+  color: var(--role-primary);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   LEFT FOOTER
+   ========================================================= */
+
+.role-login-page .role-left-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 650px;
+
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.role-login-page .role-theme-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 12px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.role-login-page .role-theme-button:hover {
+  border-color: #c7d2fe;
+  color: var(--role-primary);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.role-login-page .role-login-right {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 45px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  border-left: 1px solid rgba(229, 231, 235, 0.8);
+
+  backdrop-filter: blur(20px);
+}
+
+/* =========================================================
+   LOGIN CARD
+   ========================================================= */
+
+.role-login-page .role-login-card {
+  width: 100%;
+  max-width: 440px;
+
+  padding: 10px 0;
+}
+
+/* =========================================================
+   MOBILE BRAND
+   ========================================================= */
+
+.role-login-page .role-mobile-brand {
+  display: none;
+}
+
+/* =========================================================
+   ROLE BADGE
+   ========================================================= */
+
+.role-login-page .role-login-badge {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 11px;
+
+  border-radius: 8px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.role-login-page .role-badge-student {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.role-login-page .role-badge-teacher {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.role-login-page .role-badge-admin {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* =========================================================
+   FORM HEADING
+   ========================================================= */
+
+.role-login-page .role-form-heading {
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+
+.role-login-page .role-welcome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 7px;
+
+  color: var(--role-primary);
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.role-login-page .role-form-heading h2 {
+  margin: 0 0 10px;
+
+  color: #111827;
+
+  font-size: 29px;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  font-weight: 800;
+}
+
+.role-login-page .role-form-heading p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.role-login-page .role-login-form {
+  width: 100%;
+}
+
+.role-login-page .role-field {
+  margin-bottom: 19px;
+}
+
+.role-login-page .role-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   PASSWORD HEADER
+   ========================================================= */
+
+.role-login-page .role-password-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+.role-login-page .role-password-header label {
+  margin: 0;
+}
+
+.role-login-page .role-password-header a {
+  color: var(--role-primary);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.role-login-page .role-password-header a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.role-login-page .role-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.role-login-page .role-input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #9ca3af;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+.role-login-page .role-input-wrapper input {
+  width: 100%;
+  height: 51px;
+
+  box-sizing: border-box;
+
+  padding: 0 15px 0 43px;
+
+  border: 1px solid #dfe3ea;
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.role-login-page .role-input-wrapper input::placeholder {
+  color: #a5acb8;
+}
+
+.role-login-page .role-input-wrapper input:hover {
+  border-color: #c9ced8;
+}
+
+.role-login-page .role-input-wrapper input:focus {
+  border-color: var(--role-primary);
+
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.09);
+}
+
+/* =========================================================
+   PASSWORD TOGGLE
+   ========================================================= */
+
+.role-login-page .role-password-toggle {
+  position: absolute;
+
+  right: 7px;
+  top: 7px;
+
+  height: 37px;
+
+  padding: 0 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #f3f4f6;
+
+  color: #6b7280;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.role-login-page .role-password-toggle:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* =========================================================
+   FORM OPTIONS
+   ========================================================= */
+
+.role-login-page .role-form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 3px 0 20px;
+}
+
+.role-login-page .role-form-options label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.role-login-page .role-form-options input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+
+  margin: 0;
+
+  accent-color: var(--role-primary);
+
+  cursor: pointer;
+}
+
+.role-login-page .role-secure-label {
+  color: #9ca3af;
+  font-size: 10px;
+}
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+.role-login-page .role-login-button {
+  width: 100%;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: none;
+  border-radius: 11px;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.role-login-page .role-button-student {
+  background: linear-gradient(
+    135deg,
+    #059669,
+    #047857
+  );
+
+  box-shadow:
+    0 9px 20px rgba(5, 150, 105, 0.18);
+}
+
+.role-login-page .role-button-teacher {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  box-shadow:
+    0 9px 20px rgba(37, 99, 235, 0.18);
+}
+
+.role-login-page .role-button-admin {
+  background: linear-gradient(
+    135deg,
+    #dc2626,
+    #b91c1c
+  );
+
+  box-shadow:
+    0 9px 20px rgba(220, 38, 38, 0.18);
+}
+
+.role-login-page .role-login-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.role-login-page .role-login-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* =========================================================
+   SPINNER
+   ========================================================= */
+
+.role-login-page .role-spinner {
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation: roleLoginSpinner 0.7s linear infinite;
+}
+
+@keyframes roleLoginSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   INFO BOX
+   ========================================================= */
+
+.role-login-page .role-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  margin-top: 20px;
+  padding: 13px;
+
+  border-radius: 12px;
+
+  border: 1px solid;
+}
+
+.role-login-page .role-info-student {
+  background: #f0fdf4;
+  border-color: #dcfce7;
+}
+
+.role-login-page .role-info-teacher {
+  background: #eff6ff;
+  border-color: #dbeafe;
+}
+
+.role-login-page .role-info-admin {
+  background: #fef2f2;
+  border-color: #fee2e2;
+}
+
+.role-login-page .role-info-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  font-size: 16px;
+}
+
+.role-login-page .role-info-box strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.role-login-page .role-info-box p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.role-login-page .role-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 22px 0 18px;
+
+  color: #b0b5bf;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.role-login-page .role-divider::before,
+.role-login-page .role-divider::after {
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background: #e5e7eb;
+}
+
+/* =========================================================
+   SWITCH LOGIN
+   ========================================================= */
+
+.role-login-page .role-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  color: #9ca3af;
+
+  font-size: 14px;
+}
+
+.role-login-page .role-switch > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.role-login-page .role-switch a {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 8px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #6b7280;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+}
+
+.role-login-page .role-switch a:hover {
+  color: var(--role-primary);
+  border-color: #c7d2fe;
+  background: #f8faff;
+}
+
+/* =========================================================
+   REGISTER
+   ========================================================= */
+
+.role-login-page .role-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  margin-top: 18px;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+.role-login-page .role-register a {
+  color: var(--role-primary);
+
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.role-login-page .role-register a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   ACCESS NOTE
+   ========================================================= */
+
+.role-login-page .role-access-note {
+  margin-top: 17px;
+
+  text-align: center;
+
+  color: #9ca3af;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SECURITY
+   ========================================================= */
+
+.role-login-page .role-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 20px;
+  padding-top: 17px;
+
+  border-top: 1px solid #edf0f4;
+
+  color: #10b981;
+}
+
+.role-login-page .role-security > span {
+  width: 21px;
+  height: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ecfdf5;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.role-login-page .role-security > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.role-login-page .role-security strong {
+  color: #4b5563;
+  font-size: 12px;
+}
+
+.role-login-page .role-security small {
+  color: #a1a7b1;
+  font-size: 12px;
+}
+
+/* =========================================================
+   BACK LINK
+   ========================================================= */
+
+.role-login-page .role-back {
+  margin-top: 17px;
+
+  text-align: center;
+}
+
+.role-login-page .role-back a {
+  color: #9ca3af;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.role-login-page .role-back a:hover {
+  color: var(--role-primary);
+}
+
+/* =========================================================
+   DARK MODE
+   IMPORTANT:
+   Uses .role-login-dark which already exists in your JSX.
+   Does NOT use generic .dark selectors.
+   ========================================================= */
+
+.role-login-page.role-login-dark {
+  --role-text: #f1f5f9;
+  --role-muted: #94a3b8;
+  --role-border: #334155;
+  --role-card: #111827;
+  --role-bg: #0b1120;
+
+  background: #0b1120;
+  color: #f1f5f9;
+}
+
+.role-login-page.role-login-dark .role-login-background {
+  opacity: 0.75;
+}
+
+.role-login-page.role-login-dark .role-login-left {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+.role-login-page.role-login-dark .role-login-right {
+  background: rgba(15, 23, 42, 0.78);
+  border-left-color: rgba(51, 65, 85, 0.7);
+}
+
+.role-login-page.role-login-dark .role-brand-name,
+.role-login-page.role-login-dark .role-hero h1,
+.role-login-page.role-login-dark .role-form-heading h2 {
+  color: #f8fafc;
+}
+
+.role-login-page.role-login-dark .role-brand-tagline,
+.role-login-page.role-login-dark .role-hero > p,
+.role-login-page.role-login-dark .role-form-heading p {
+  color: #94a3b8;
+}
+
+.role-login-page.role-login-dark .role-profile {
+  background: rgba(30, 41, 59, 0.75);
+  border-color: #334155;
+}
+
+.role-login-page.role-login-dark .role-profile-content strong {
+  color: #e2e8f0;
+}
+
+.role-login-page.role-login-dark .role-profile-content span {
+  color: #94a3b8;
+}
+
+.role-login-page.role-login-dark .role-feature {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+.role-login-page.role-login-dark .role-theme-button {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+.role-login-page.role-login-dark .role-input-wrapper input {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+.role-login-page.role-login-dark .role-input-wrapper input::placeholder {
+  color: #64748b;
+}
+
+.role-login-page.role-login-dark .role-input-wrapper input:hover {
+  border-color: #475569;
+}
+
+.role-login-page.role-login-dark .role-password-toggle {
+  background: #334155;
+  color: #cbd5e1;
+}
+
+.role-login-page.role-login-dark .role-password-toggle:hover {
+  background: #475569;
+  color: #ffffff;
+}
+
+.role-login-page.role-login-dark .role-form-options label {
+  color: #94a3b8;
+}
+
+.role-login-page.role-login-dark .role-switch a {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+.role-login-page.role-login-dark .role-switch a:hover {
+  background: #273449;
+}
+
+.role-login-page.role-login-dark .role-divider::before,
+.role-login-page.role-login-dark .role-divider::after {
+  background: #334155;
+}
+
+.role-login-page.role-login-dark .role-security {
+  border-top-color: #273449;
+}
+
+.role-login-page.role-login-dark .role-security strong {
+  color: #cbd5e1;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .role-login-page .role-login-container {
+    grid-template-columns: minmax(0, 1fr) 460px;
+  }
+
+  .role-login-page .role-login-left {
+    padding: 45px 5%;
+  }
+
+  .role-login-page .role-login-right {
+    padding: 35px;
+  }
+
+  .role-login-page .role-hero h1 {
+    font-size: 48px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .role-login-page {
+    overflow: auto;
+  }
+
+  .role-login-page .role-login-container {
+    display: block;
+    min-height: 100vh;
+  }
+
+  .role-login-page .role-login-left {
+    display: none;
+  }
+
+  .role-login-page .role-login-right {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+
+    border-left: none;
+
+    padding: 30px 22px 40px;
+
+    background: var(--role-bg);
+
+    backdrop-filter: none;
+  }
+
+  .role-login-page .role-login-card {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .role-login-page .role-mobile-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-bottom: 35px;
+  }
+
+  .role-login-page .role-mobile-brand .role-brand-logo {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+  }
+
+  .role-login-page .role-mobile-brand > span {
+    color: #111827;
+
+    font-size: 17px;
+    font-weight: 800;
+  }
+
+  .role-login-page.role-login-dark .role-mobile-brand > span {
+    color: #f8fafc;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .role-login-page .role-login-right {
+    padding: 25px 17px 35px;
+  }
+
+  .role-login-page .role-form-heading h2 {
+    font-size: 25px;
+  }
+
+  .role-login-page .role-form-heading p {
+    font-size: 12px;
+  }
+
+  .role-login-page .role-input-wrapper input {
+    height: 49px;
+  }
+
+  .role-login-page .role-login-button {
+    height: 50px;
+  }
+
+  .role-login-page .role-info-box {
+    padding: 11px;
+  }
+
+  .role-login-page .role-switch {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .role-login-page .role-switch > div {
+    justify-content: center;
+  }
+}

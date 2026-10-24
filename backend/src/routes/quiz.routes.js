@@ -1,0 +1,1 @@
+const express=require('express');const router=express.Router();const {authenticate}=require('../middleware/auth.middleware');const c=require('../controllers/quiz.controller');router.use(authenticate);router.post('/generate',c.generate);router.post('/submit',c.submit);router.get('/history',c.history);module.exports=router;

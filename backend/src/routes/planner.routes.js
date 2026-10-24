@@ -1,0 +1,1 @@
+const express=require('express');const router=express.Router();const c=require('../controllers/planner.controller');const {authenticate,requireStudent}=require('../middleware/auth.middleware');router.use(authenticate,requireStudent);router.get('/',c.list);router.post('/generate',c.generate);module.exports=router;

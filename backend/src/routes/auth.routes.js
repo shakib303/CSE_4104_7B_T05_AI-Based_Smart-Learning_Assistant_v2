@@ -1,0 +1,5 @@
+const express=require('express');const router=express.Router();const {body}=require('express-validator');const c=require('../controllers/auth.controller');const {authenticate}=require('../middleware/auth.middleware');const {validate}=require('../middleware/validate.middleware');
+const loginRules=[body('email').isEmail().normalizeEmail().withMessage('Valid email required'),body('password').notEmpty().withMessage('Password is required')];
+router.post('/register',[body('name').trim().notEmpty(),body('email').isEmail().normalizeEmail(),body('password').isLength({min:8}).matches(/(?=.*[A-Z])(?=.*[0-9])/),body('studentId').trim().notEmpty()],validate,c.register);
+router.post('/login',loginRules,validate,c.login);router.post('/student-login',loginRules,validate,c.studentLogin);router.post('/teacher-login',loginRules,validate,c.teacherLogin);router.post('/admin-login',loginRules,validate,c.adminLogin);
+router.post('/logout',authenticate,c.logout);router.post('/refresh',c.refreshToken);router.get('/me',authenticate,c.getMe);module.exports=router;
